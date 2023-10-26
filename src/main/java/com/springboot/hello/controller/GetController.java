@@ -1,7 +1,10 @@
 package com.springboot.hello.controller;
 
-import lombok.Getter;
-import org.springframework.web.bind.annotation.*;
+import com.springboot.hello.dto.MemberDto;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
@@ -45,5 +48,11 @@ public class GetController {
         });
         return sb.toString();
     }
+    @GetMapping("request3")
+    public String getRequestParam3(MemberDto memberDto){
+
+        return memberDto.toString();
+    }
+
 
 }
